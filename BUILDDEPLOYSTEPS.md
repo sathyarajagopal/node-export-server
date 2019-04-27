@@ -138,6 +138,10 @@ Now run the below command to remove the containers.
 
     docker container rm <ctr1> <ctr2>
 
+## Prune unused docker objects
+
+    docker system prune -a
+
 Congratulations! You've successfully created a small, independent Highcharts node export server that can be deployed and scaled using Docker containers.
 
 These are the fundamental building blocks to get a Node.js application into a Docker container.
