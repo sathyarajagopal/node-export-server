@@ -62,7 +62,7 @@ Open the Dockerfile in the text editor of your choice and replace the contents w
     WORKDIR /node-export-server
 
     EXPOSE 80
-    ENTRYPOINT ["highcharts-export-server", "--enableServer", "1", "--logLevel", "4"]
+    ENTRYPOINT ["npm run", "start"]
 
 ## Switch to Linux containers
 
