@@ -11,9 +11,7 @@
     },
     "scripts": {
         "install": "node ./build.js",
-        "preinstall": "set ACCEPT_HIGHCHARTS_LICENSE=1",
-        "postinstall": "npm link",
-        "start": "highcharts-export-server --enableServer 1 --host 0.0.0.0 --port 7801"
+        "start": "highcharts-export-server --enableServer 1 --host 0.0.0.0 --port 7801 --loglevel 4"
     },
     "main": "lib/index.js",
     "license": "MIT",

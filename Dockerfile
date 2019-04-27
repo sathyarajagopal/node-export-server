@@ -22,4 +22,4 @@ USER node
 WORKDIR /node-export-server
 
 EXPOSE 80
-ENTRYPOINT ["highcharts-export-server", "--enableServer", "1", "--logLevel", "4"]
+ENTRYPOINT ["npm run", "start"]
