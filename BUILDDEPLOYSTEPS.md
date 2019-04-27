@@ -42,7 +42,7 @@ Open the Dockerfile in the text editor of your choice and replace the contents w
 
     WORKDIR /
 
-    RUN git clone  https://github.com/highcharts/node-export-server.git && \
+    RUN git clone  https://github.com/sathyarajagopal/node-export-server.git && \
         chown -R node /node-export-server
 
     WORKDIR /node-export-server
@@ -61,12 +61,24 @@ Open the Dockerfile in the text editor of your choice and replace the contents w
 
     WORKDIR /node-export-server
 
-    EXPOSE 7801
+    EXPOSE 80
     ENTRYPOINT ["highcharts-export-server", "--enableServer", "1", "--logLevel", "4"]
 
 ## Switch to Linux containers
 
 Right click on Docker Desktop whale icon in systems tray and select "Switch to Linux containers..." only if the whale is currently running in windows container.
+
+## Remove existing Docker image
+
+You can run the following command to see a list of all images available on your machine. This is to check whether node-export-server image already exists.
+
+    docker image ls
+
+### Delete the image
+
+If node-export-server image exists then delete the image using the following command:
+
+    docker image rm -f node-export-server
 
 ## Create Docker image
 
@@ -92,6 +104,39 @@ To run your app in a container, run the following command:
     docker run -it --rm -p 7801:80 node-export-server
 
 Once the command completes, browse to http://localhost:7801/health.
+
+## Push to docker hub
+
+Docker Hub is a central place to upload Docker images. Many products, including Node.js, can create containers based on images in Docker Hub.
+
+### Login to Docker Hub
+
+In your command prompt, run the following command:
+
+    docker login
+
+Use the username and password created when you downloaded Docker. You can visit the Docker Hub website to reset your password if needed.
+
+### Upload image to Docker Hub
+
+Re-tag (rename) your Docker image under your username and push it to Docker Hub using the following commands:
+
+    docker tag nodeexportserver [YOUR DOCKER USERNAME]/node-export-server
+    docker push [YOUR DOCKER USERNAME]/node-export-server
+
+## Remove Docker Containers
+
+Run the below command to list all containers in your machine.
+
+    docker container ls --all
+
+Capture the container name from the previous command and run the below command to stop running containers.
+
+    docker container stop <ctr1> <ctr2>
+
+Now run the below command to remove the containers.
+
+    docker container rm <ctr1> <ctr2>
 
 Congratulations! You've successfully created a small, independent Highcharts node export server that can be deployed and scaled using Docker containers.
 
