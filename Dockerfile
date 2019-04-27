@@ -22,4 +22,4 @@ USER node
 WORKDIR /node-export-server
 
 EXPOSE 80
-ENTRYPOINT ["npm run", "start"]
+ENTRYPOINT ["/usr/local/bin/npm", "run", "start"]

@@ -157,3 +157,4 @@ These are the fundamental building blocks to get a Node.js application into a Do
 7. https://github.com/highcharts/highcharts-export-server
 8. https://www.highcharts.com/forum/viewtopic.php?t=40349
 9. https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
+10. https://docs.docker.com/engine/reference/builder/#entrypoint
