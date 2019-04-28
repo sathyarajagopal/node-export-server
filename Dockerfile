@@ -21,5 +21,7 @@ USER node
 
 WORKDIR /node-export-server
 
-EXPOSE 80
-ENTRYPOINT ["/usr/local/bin/npm", "run", "start"]
+CMD highcharts-export-server --enableServer 1 --port 7801
+
+EXPOSE 7801
+# ENTRYPOINT ["/usr/local/bin/npm", "run", "start"]
